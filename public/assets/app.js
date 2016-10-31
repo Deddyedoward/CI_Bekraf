@@ -3,7 +3,7 @@ $(function(){
 		if(e.which == 13){
 			$.ajax({
 				method: "POST",
-				url: "/CodeIgniter/index.php/todo/add",
+				url: "index.php/todo/add",
 				data: { task: $('#todo-input').val() }
 			}).done(function(d){
 				var data = JSON.parse(d);
@@ -25,7 +25,7 @@ function update(data)
 	var id = $(data).data('task');
 	$.ajax({
 		method: "POST",
-		url: "/CodeIgniter/index.php/todo/edit",
+		url: "index.php/todo/edit",
 		data: { id: id, task: $('#todo-edit-' + id).val() }
 	}).done(function(msg){
 		var datas = JSON.parse(msg);
@@ -44,7 +44,7 @@ function hapus(data)
 	var id = $(data).data('delete');
 	$.ajax({
 		method: "POST",
-		url: "/CodeIgniter/index.php/todo/delete",
+		url: "index.php/todo/delete",
 		data: { id: id}
 	}).done(function(msg){
 		var data = JSON.parse(msg);
