@@ -7,6 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<title>Welcome to CodeIgniter</title>
 	<script type="text/javascript" src="<?php echo base_url(); ?>public/assets/jquery.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>public/assets/app.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>public/assets/app.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>public/assets/app.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
