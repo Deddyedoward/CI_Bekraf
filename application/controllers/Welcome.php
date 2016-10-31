@@ -18,13 +18,54 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function __construct()
 	{
-		$this->load->view('welcome_message');
+		parent::__construct();
+
+		$this->load->database();
 	}
 
-	public function show()
+	public function index()
 	{
-		echo 'sjfklsjdfkjdf';
+		$this->load->model('Task');
+
+		$result = $this->Task->get_all();
+
+		$data['result'] = $result;
+
+		$this->load->view('welcome_message', $data);
+	}
+
+	public function add()
+	{
+		$this->load->model('Task');
+
+		$return = $this->Task->insert_entry();
+
+		if($return == 'success'){
+			echo json_encode($this->Task->last_id());
+		}
+	}
+
+	public function edit()
+	{
+		$this->load->model('Task');
+
+		$return = $this->Task->update_entry();
+
+		if($return == 'success'){
+			echo json_encode($this->Task->last());
+		}
+	}
+
+	public function delete()
+	{
+		$this->load->model('Task');
+
+		$return = $this->Task->delete_entry();
+
+		if($return == 'success'){
+			echo json_encode($this->Task->last());
+		}
 	}
 }
